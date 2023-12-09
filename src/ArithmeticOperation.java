@@ -1,21 +1,11 @@
-/** Data structures for the expressions*/
-class ArithmeticExp {
-    public int type;
-    public int value;
-    public ArithmeticExp left;
-    public ArithmeticExp right;
-    
-    public ArithmeticExp(int type, int value, ArithmeticExp left, ArithmeticExp right) {
-        this.type = type;
-        this.value = value;
-        this.left = left;
-        this.right = right;
-    }
+/* Data structures for the expressions*/
+// Abstract class with method
+abstract class ArithmeticExp {
+    public abstract int evaluate();
+    public abstract String toString();
 }
-/** main class */
 class ArithmeticOperation {
-    
-    /** Constants for representing the types*/
+    /*Constants for representing the types*/
     public static final int TYPE_NUMBER = 1;
     public static final int TYPE_SUM = 2;
     public static final int TYPE_PROD = 3;
@@ -30,7 +20,7 @@ class ArithmeticOperation {
         
         System.out.println(evaluate(term));
     }
-    /** Evaluating the expression recursively */
+    /* Evaluating the expression recursively */
     public static int evaluate(ArithmeticExp term) {
         switch (term.type) {
             case TYPE_NUMBER:
